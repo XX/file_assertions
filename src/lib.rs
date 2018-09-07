@@ -11,7 +11,7 @@ macro_rules! clear_dir {
         if ::std::fs::metadata($path).is_ok() {
             ::std::fs::remove_dir_all($path).expect(&format!("Can't remove {:?} dir.", $path));
         }
-        ::std::fs::create_dir($path).expect(&format!("Can't create {:?} dir.", $path));
+        ::std::fs::create_dir_all($path).expect(&format!("Can't create {:?} dir.", $path));
     };
 }
 
